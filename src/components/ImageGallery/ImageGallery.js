@@ -1,19 +1,17 @@
-// import Modal from 'components/Modal/Modal';
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
-// import { getImages } from '../Services/getImages';
 
-import { List, Button } from './ImageGallery.styled';
+import { List } from './ImageGallery.styled';
 
 export function ImageGallery({ items }) {
   return (
     <>
-      <ul className="ImageGallery">
+      <List>
         {items.map(item => (
           <ImageGalleryItem key={item.id} item={item} />
         ))}
-      </ul>
+      </List>
     </>
   );
 }

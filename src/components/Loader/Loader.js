@@ -1,8 +1,9 @@
 import DotLoader from 'react-spinners/DotLoader';
+import { Spinner } from './Loader.styled';
 
 export const Loader = () => {
   return (
-    <div className="Spinner">
+    <Spinner>
       <DotLoader
         height="80"
         width="80"
@@ -11,6 +12,6 @@ export const Loader = () => {
         ariaLabel="three-dots-loading"
         visible={true}
       />
-    </div>
+    </Spinner>
   );
 };

@@ -51,8 +51,6 @@ export const SearchFormBtn = styled.button`
   }
 `;
 
-export const Image = styled.img``;
-
 export const SearchFormInput = styled.input`
   display: inline-block;
   width: 100%;

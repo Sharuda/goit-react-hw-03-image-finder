@@ -4,34 +4,31 @@ import {
   Header,
   SearchForm,
   SearchFormBtn,
-  Image,
   SearchFormInput,
 } from './Searchbar.styled';
+// import { ImageSearch } from 'react-icons/im';
 
 export class Searchbar extends Component {
   state = {
-    value: '',
+    inputData: '',
   };
 
-  handleChange = ({ target: { value } }) => {
-    this.setState({ value: value.toLowerCase() });
+  handleChange = e => {
+    this.setState({ inputData: e.currentTarget.value.toLowerCase() });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-
-    this.props.onSubmit(this.state.value);
-    this.setState({ value: '' });
+    this.props.onSubmit(this.state.inputData);
+    this.setState({ inputData: '' });
   };
 
   render() {
-    const { value } = this.state;
+    const { inputData } = this.state.inputData;
     return (
       <Header>
-        <SearchForm onSubmit={this.handleSearchbarSubmit}>
-          <SearchFormBtn>
-            <Image href="../../search-svgrepo-com.svg" alt="search" />
-          </SearchFormBtn>
+        <SearchForm onSubmit={this.handleSubmit}>
+          <SearchFormBtn>{/* <ImageSearch /> */}</SearchFormBtn>
 
           <SearchFormInput
             type="text"
@@ -39,7 +36,7 @@ export class Searchbar extends Component {
             autoFocus
             placeholder="Search images and photos"
             onChange={this.handleChange}
-            value={value}
+            value={inputData}
           />
         </SearchForm>
       </Header>

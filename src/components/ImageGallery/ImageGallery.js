@@ -1,27 +1,23 @@
+// import Modal from 'components/Modal/Modal';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
+import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
+// import { getImages } from '../Services/getImages';
 
-export const ImageGallery = ({ gallery, onOpenModal }) => {
+import { List, Button } from './ImageGallery.styled';
+
+export function ImageGallery({ items }) {
   return (
     <>
-      <ul id="forScroll">
-        {gallery.map(({ id, webformatURL, largeImageURL, tags }) => {
-          return (
-            <ImageGalleryItem
-              key={id}
-              webformatURL={webformatURL}
-              largeImageURL={largeImageURL}
-              tags={tags}
-              onOpenModal={onOpenModal}
-            />
-          );
-        })}
+      <ul className="ImageGallery">
+        {items.map(item => (
+          <ImageGalleryItem key={item.id} item={item} />
+        ))}
       </ul>
     </>
   );
-};
+}
 
 ImageGallery.propTypes = {
-  gallery: PropTypes.array.isRequired,
-  onOpenModal: PropTypes.func.isRequired,
+  items: PropTypes.array,
 };

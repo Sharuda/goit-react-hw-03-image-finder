@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Searchbar } from './Searchbar/Searchbar';
-// import PropTypes from 'prop-types';
+import { ImageGallery } from './ImageGallery/ImageGallery';
 
 export class App extends Component {
   state = {
@@ -12,11 +12,13 @@ export class App extends Component {
   };
 
   render() {
-    // const { textSearch } = this.state;
+    const { textSearch } = this.state;
 
     return (
       <>
         <Searchbar onSubmit={this.handleSubmit} />
+
+        <ImageGallery value={textSearch} />
       </>
     );
   }

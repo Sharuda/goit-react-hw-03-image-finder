@@ -6,7 +6,7 @@ import {
   SearchFormBtn,
   SearchFormInput,
 } from './Searchbar.styled';
-// import { ImageSearch } from 'react-icons/im';
+import { ImSearch } from 'react-icons/im';
 
 export class Searchbar extends Component {
   state = {
@@ -28,7 +28,9 @@ export class Searchbar extends Component {
     return (
       <Header>
         <SearchForm onSubmit={this.handleSubmit}>
-          <SearchFormBtn>{/* <ImageSearch /> */}</SearchFormBtn>
+          <SearchFormBtn>
+            <ImSearch size="22" />
+          </SearchFormBtn>
 
           <SearchFormInput
             type="text"
